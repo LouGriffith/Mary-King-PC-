@@ -1,0 +1,132 @@
+// Breakpoint
+//----------------------------------------------------------
+	@mixin breakpoint($point) {
+	  @if $point == papa-bear {
+	    @media (max-width: 1600px) { @content; }
+	  }
+	  @else if $point == mama-bear {
+	    @media (max-width: 1250px) { @content; }
+	  }
+	  @else if $point == baby-bear {
+	    @media (max-width: 650px)  { @content; }
+	  }
+	}
+
+// Icon Fonts
+//----------------------------------------------------------
+@font-face {
+	font-family: 'mfk';
+	src:url('../fonts/mfk.eot?-shmv5r');
+	src:url('../fonts/mfk.eot?#iefix-shmv5r') format('embedded-opentype'),
+		url('../fonts/mfk.ttf?-shmv5r') format('truetype'),
+		url('../fonts/mfk.woff?-shmv5r') format('woff'),
+		url('../fonts/mfk.svg?-shmv5r#mfk') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'mfk';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"] span, [class*=" icon-"] span{
+  display: none;
+}
+
+.icon-logo:before {
+	content: "\e604";
+}
+.icon-menu:before {
+	content: "\e600";
+}
+.icon-facebook:before {
+	content: "\e601";
+}
+.icon-instagram:before {
+	content: "\e602";
+}
+.icon-twitter:before {
+	content: "\e603";
+}
+
+// Normalize 
+//----------------------------------------------------------
+//	@import "normalize";
+
+
+// Foundation Settings
+//----------------------------------------------------------
+	@import "settings";
+
+
+// Tweak the mixin for WordPress 
+// this might create some extra CSS in additional to app.css
+//----------------------------------------------------------
+	@import "foundation/components/pagination";
+
+
+// Foundation Standalone
+// Reverie comes with this already
+//----------------------------------------------------------
+	@import "foundation";
+
+
+// Compass Magic
+// note you will need to install Compass first
+//----------------------------------------------------------
+	// @import "compass/css3/shared";
+	// @import "compass/css3/border-radius";
+	// @import "compass/css3/transition";
+
+
+// Transistion Effects
+//----------------------------------------------------------
+	a, a:visited, a:hover, a:visited:hover {
+		transition: all 100ms linear;
+	}
+
+
+// Image Settings
+//----------------------------------------------------------
+	@import "image-settings";
+
+
+// Pagniation
+//----------------------------------------------------------
+	@import "pagination";
+
+
+// Comment System
+//----------------------------------------------------------
+	.avatar {
+		border-radius:50%;
+		float: left;
+	}
+
+	@import "comment-styles";
+
+
+// Misc Fixes
+//----------------------------------------------------------
+
+	.admin-bar > .fixed {
+		margin-top: rem-calc(32);
+	}
+
+	.f-topbar-fixed > .container {
+		margin-top: rem-calc(32);
+	}
+
+	#wpadminbar{
+  		position: fixed;
+	}
